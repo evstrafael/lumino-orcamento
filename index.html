@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Orçamento</title>
+  <link rel="icon" href="img/icon.svg" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background-color: #f0f0f0;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    
+    .form-left {
+      flex: 0 0 100%;
+      padding: 40px;
+    }
+    
+    .form-left h1 {
+      font-size: 35px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    
+    .form-left p {
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .form-left h1 {
+        font-size: 8vw;
+      }
+    }
+    
+    .form-left img {
+      margin-top: 200px;
+      margin-left: 20px;
+      width: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .form-left img {
+        display: none;
+      }
+    }
+    
+    .form-right {
+      flex: 0 0 100%;
+      padding: 40px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 8px;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+      padding: 12px;
+      border: none;
+      border-bottom: 1px solid #000000;
+      background-color: transparent;
+      color: #000000;
+      font-size: 14px;
+      width: 100%;
+    }
+    
+    .form-group textarea {
+      resize: none;
+      height: 80px;
+    }
+    
+    .form-group .options {
+      margin-top: 5px;
+    }
+    
+    .form-group .option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+    
+    .form-group .option input[type="radio"] {
+      margin-right: 5px;
+    }
+    
+    .form-group .option label {
+      margin-bottom: 0;
+      color: #333333;
+    }
+    
+    .form-group .other-text {
+      display: none;
+    }
+    
+    .form-group input[type="submit"] {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #000000;
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: #333333;
+    }
+    
+    .form-group .message {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666666;
+    }
+    
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    .footer img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    
+    @media screen and (min-width: 768px) {
+      .form-left {
+        flex: 0 0 300px;
+      }
+    
+      .form-right {
+        flex: 0 0 calc(100% - 300px);
+      }
+    }
+  </style>
+  <script>
+    function showOtherText() {
+      var otherText = document.getElementById('other-text');
+      var otherRadio = document.getElementById('other');
+      if (otherRadio.checked) {
+        otherText.style.display = 'block';
+      } else {
+        otherText.style.display = 'none';
+      }
+    }
+    
+    window.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('form');
+      var message = document.getElementById('message');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        message.textContent = 'Obrigado, entraremos em contato em breve.';
+        form.reset();
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <div class="form-left">
+        <h1>Vamos criar um projeto juntos?</h1>
+        <p>Preencha o formulário para que possamos conversar sobre seu projeto.</p>
+        <img src="img/LOGO.svg" alt="">  
+      </div>
+      <div class="form-right">
+        <form action="https://formsubmit.co/rafaell.evst@gmail.com" method="POST">
+        <input type="hidden" name="_next" value="https://evstrafael.github.io/lumino-orcamento//sucesso.html">
+                  <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Nome da empresa:</label>
+            <input type="text" id="company" name="company" placeholder="Digite o nome da sua empresa" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" placeholder="Digite seu número de WhatsApp" required>
+          </div>
+          <div class="form-group">
+            <label>O que precisa?</label>
+            <div class="options">
+              <div class="option">
+                <input type="radio" id="logo" name="needs" value="logo" required>
+                <label for="logo">Precisa de uma logo/identidade visual.</label>
+              </div>
+              <div class="option">
+                <input type="radio" id="two-logos" name="needs" value="two-logos" required>
+                <label for="two-logos">Já tenho uma, mas quero mudar/melhorar</label>
+              </div>
+              <div class="option">
+                <input type="radio" id="other" name="needs" value="other" onclick="showOtherText()" required>
+                <label for="other">Outro</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea id="other-text" name="other-text" placeholder="Digite sua especificação" class="other-text"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Enviar">
+          </div>
+          <div class="form-group">
+            <span id="message" class="message"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
